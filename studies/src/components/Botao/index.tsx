@@ -1,13 +1,10 @@
 import React from 'react';
 import style from './Botao.module.scss';
 
-// Definindo o tipo das props do Botao
-interface BotaoProps {
-  children: React.ReactNode;
-  type?: "button" | "submit" | "reset";
-}
-
-class Botao extends React.Component<BotaoProps> {
+class Botao extends React.Component<{
+  type?: "button" | "submit" | "reset" | undefined;
+  children: React.ReactNode; // Adicionando a prop children
+}> {
   render() {
     const { type = "button", children } = this.props;
     return (
